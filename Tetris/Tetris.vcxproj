@@ -142,6 +142,7 @@
     <ClCompile Include="MAIN.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="ShapeMNG.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StageMNG.cpp" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Shape.h" />
+    <ClInclude Include="ShapeMNG.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StageMNG.h" />
     <ClInclude Include="value.h" />

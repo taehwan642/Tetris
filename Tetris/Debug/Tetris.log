@@ -1,4 +1,2 @@
-﻿  Core.cpp
-C:\Users\taehw\Desktop\Tetris\Tetris\Core.cpp(40,18): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\taehw\Desktop\Tetris\Tetris\Core.cpp(40,22): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+﻿  ShapeMNG.cpp
   Tetris.vcxproj -> C:\Users\taehw\Desktop\Tetris\Debug\Tetris.exe

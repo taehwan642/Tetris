@@ -42,6 +42,9 @@
     <ClCompile Include="Rectangle.cpp">
       <Filter>Tetromino</Filter>
     </ClCompile>
+    <ClCompile Include="ShapeMNG.cpp">
+      <Filter>Tetromino</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="value.h">
@@ -63,6 +66,9 @@
       <Filter>Tetromino</Filter>
     </ClInclude>
     <ClInclude Include="Rectangle.h">
+      <Filter>Tetromino</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeMNG.h">
       <Filter>Tetromino</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,9 +2,11 @@
 #include <iostream>
 #include <time.h>
 #include <Windows.h>
+#include <list>
 using namespace std;
 
 #include "Macro.h"
+#include "Flags.h"
 
 #define STAGE_WIDTH 10 // 스테이지의 가로
 #define STAGE_HEIGHT 15 // 스테이지의 세로
