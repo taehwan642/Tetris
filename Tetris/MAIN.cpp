@@ -1,6 +1,6 @@
 #include "Core.h"
 
-int main(void)
+int main(void) 
 {
 	if (!Core::GetInstance()->Init())
 	{

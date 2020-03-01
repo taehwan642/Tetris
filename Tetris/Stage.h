@@ -1,6 +1,6 @@
 #pragma once
 #include "value.h"
-class Stage
+class Stage // 스테이지
 {
 private:
     friend class StageMNG;

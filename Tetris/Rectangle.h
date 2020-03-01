@@ -1,6 +1,6 @@
 #pragma once
 #include "Shape.h"
-class Rectangle :
+class Rectangle : // 2 X 2 µµÇü
 	public Shape
 {
 public:

@@ -2,7 +2,7 @@
 
 #include "value.h"
 
-class StageMNG
+class StageMNG // 스테이지를 관리하는 클래스
 {
 private:
 	static StageMNG* instance;

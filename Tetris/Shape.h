@@ -1,6 +1,6 @@
 #pragma once
 #include "value.h"
-class Shape
+class Shape // 모든 테트로미노, 즉 도형들의 기본 클래스
 {
 protected:
 	char shape[4][4];

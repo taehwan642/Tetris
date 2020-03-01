@@ -1,6 +1,6 @@
 #pragma once
 #include "value.h"
-class Core
+class Core // 전체적인 게임을 담당하는 코어.
 {
 private:
 	static Core* instance;
@@ -22,6 +22,6 @@ public:
 	{
 		SAFE_DELETE(instance);
 	}
-	int SetConsolePos(int x, int y);
+	void SetConsolePos(int x, int y);
 };
 

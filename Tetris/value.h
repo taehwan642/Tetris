@@ -6,10 +6,10 @@ using namespace std;
 
 #include "Macro.h"
 
-#define STAGE_WIDTH 10
-#define STAGE_HEIGHT 15
+#define STAGE_WIDTH 10 // 스테이지의 가로
+#define STAGE_HEIGHT 15 // 스테이지의 세로
 
-typedef struct tagPosition
+typedef struct tagPosition // 도형의 위치값을 만들어줌. Vector2라고 생각하면 편함
 {
 	int x;
 	int y;
