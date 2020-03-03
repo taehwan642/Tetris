@@ -30,9 +30,15 @@ void Shape::Render()
 
 	for (int i = 0; i < 4; ++i)
 	{
-		Core::GetInstance()->SetConsolePos(pos.x, pos.y - (3 - i));
+		int yIndex = pos.y - (3 - i);
+		if (yIndex < 0)
+			continue;
+		Core::GetInstance()->SetConsolePos(pos.x, yIndex);
 		for (int j = 0; j < 4; ++j)
 		{
+			if (pos.x + j >= STAGE_WIDTH)
+				continue;
+
 			if (shape[i][j] == '0')
 				cout << "бр";
 			else

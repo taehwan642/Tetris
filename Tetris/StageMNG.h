@@ -13,6 +13,7 @@ public:
 public:
 	StageMNG();
 	~StageMNG();
+	class Stage* GetCurrentStage() { return currentstage; };
 	static StageMNG* GetInstance()
 	{
 		if (instance == nullptr)

@@ -1,11 +1,13 @@
 #include "ShapeMNG.h"
 #include "Rectangle.h"
-
+#include "StageMNG.h"
+#include "Stage.h"
 ShapeMNG* ShapeMNG::instance = nullptr;
 
 ShapeMNG::ShapeMNG() : currentshape(nullptr), nextshape(nullptr)
 {
 	currentshape = SetRandomShape();
+	shapespeed = 0;
 }
 
 ShapeMNG::~ShapeMNG()
@@ -27,7 +29,21 @@ ShapeMNG::~ShapeMNG()
 
 void ShapeMNG::Update()
 {
-	currentshape->MoveDown();
+	Stage* stage = StageMNG::GetInstance()->GetCurrentStage();
+	++shapespeed;
+	if (stage->GetSpeed() == shapespeed)
+	{
+		currentshape->MoveDown();
+		shapespeed = 0;
+	}
+	if (GetAsyncKeyState('A'))
+		currentshape->MoveLeft();
+	if (GetAsyncKeyState('D'))
+		currentshape->MoveRight();
+	if (GetAsyncKeyState('S'))
+		currentshape->MoveDown();
+
+
 }
 
 void ShapeMNG::Render()
