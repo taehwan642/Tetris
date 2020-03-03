@@ -14,7 +14,9 @@ public:
 	ShapeMNG();
 	~ShapeMNG();
 	void Update();
-	class Shape* createshape;
+	void Render();
+	class Shape* CreateShape(SHAPE_TYPE type);
+	class Shape* SetRandomShape();
 	static ShapeMNG* GetInstance()
 	{
 		if (instance == nullptr)

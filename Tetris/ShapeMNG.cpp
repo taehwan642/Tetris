@@ -5,7 +5,7 @@ ShapeMNG* ShapeMNG::instance = nullptr;
 
 ShapeMNG::ShapeMNG() : currentshape(nullptr), nextshape(nullptr)
 {
-	
+	currentshape = SetRandomShape();
 }
 
 ShapeMNG::~ShapeMNG()
@@ -27,4 +27,39 @@ ShapeMNG::~ShapeMNG()
 
 void ShapeMNG::Update()
 {
+	currentshape->MoveDown();
+}
+
+void ShapeMNG::Render()
+{
+	list<Shape*>::iterator end = shapes.end();
+	for (list<Shape*>::iterator iter = shapes.begin(); iter != end; iter++)
+	{
+		(*iter)->Render();
+	}
+	currentshape->Render();
+}
+
+Shape* ShapeMNG::CreateShape(SHAPE_TYPE type)
+{
+	Shape* shape = nullptr;
+
+	switch (type)
+	{
+	case SHAPE_RECT:
+		shape = new class Rectangle();
+		break;
+	}
+	if (!shape->Init())
+	{
+		SAFE_DELETE(shape);
+		return nullptr;
+	}
+	return shape;
+}
+
+Shape* ShapeMNG::SetRandomShape()
+{
+	int type = rand() % SHAPE_END;
+	return CreateShape((SHAPE_TYPE)type);
 }

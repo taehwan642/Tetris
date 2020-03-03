@@ -1,7 +1,6 @@
 #pragma once
 #include "Shape.h"
-class Rectangle : // 2 X 2 도형
-	public Shape
+class Rectangle : public Shape // 2 X 2 도형
 {
 public:
 	Rectangle();

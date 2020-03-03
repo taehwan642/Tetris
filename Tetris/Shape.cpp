@@ -1,5 +1,5 @@
 #include "Shape.h"
-
+#include "Core.h"
 Shape::Shape()
 {
 	widthCount = 0;
@@ -25,16 +25,19 @@ bool Shape::Init()
 
 void Shape::Render()
 {
+	// 콘솔창에 출력할 좌표 얻어온 후 출력하기
+
+
 	for (int i = 0; i < 4; ++i)
 	{
+		Core::GetInstance()->SetConsolePos(pos.x, pos.y - (3 - i));
 		for (int j = 0; j < 4; ++j)
 		{
-			if (shape[i][j] == 0)
+			if (shape[i][j] == '0')
 				cout << "□";
 			else
 				cout << "  ";
 		}
-		cout << endl;
 	}
 }
 // 클리핑 해줘야하는데 피봇이 문제, 가로의 양에 따라 해야함

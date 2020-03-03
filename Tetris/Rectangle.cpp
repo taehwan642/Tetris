@@ -18,5 +18,8 @@ bool Rectangle::Init()
 	shape[3][0] = '0';
 	shape[3][1] = '0';
 	widthCount = 2;
+	pos.x = 5;
+	pos.y = 0;
+
 	return true;
 }

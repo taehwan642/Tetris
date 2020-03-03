@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h" />
+    <ClInclude Include="Flags.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Shape.h" />
