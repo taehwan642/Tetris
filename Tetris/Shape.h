@@ -12,10 +12,16 @@ public:
 	virtual ~Shape();
 	virtual bool Init();
 	void Render();
-	void MoveDown();
+	void RenderNextShape();
+	bool MoveDown();
 	void MoveLeft();
 	void MoveRight();
 
+	char GetBlock(int x, int y) const
+	{
+		return shape[y][x];
+	}
+	
 	//포지션을 세팅 및 가져다가 쓸 기능
 	void SetPosition(int x, int y)
 	{

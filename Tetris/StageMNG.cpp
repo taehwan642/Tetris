@@ -12,7 +12,7 @@ bool StageMNG::Init()
 void StageMNG::Run()
 {
 	currentstage->Render();
-}
+}	
 
 StageMNG::StageMNG() : currentstage(nullptr)
 {

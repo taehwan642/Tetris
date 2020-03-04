@@ -1,5 +1,6 @@
 #include "Stage.h"
-
+#include "Core.h"
+#include "Shape.h"
 Stage::Stage() : speed(5)
 {
 }
@@ -10,7 +11,13 @@ Stage::~Stage()
 
 bool Stage::Init()
 {
-	memset(stage, 0, STAGE_WIDTH * STAGE_HEIGHT);
+	for (int i = 0; i < STAGE_HEIGHT; i++)
+	{
+		for (int j = 0; j < STAGE_WIDTH; j++)
+		{
+			stage[i][j] = '1';
+		}
+	}
 	return true;
 }
 
@@ -29,8 +36,37 @@ void Stage::Render()
 			else if (j == STAGE_WIDTH + 1)
 				cout << "бс";
 			else
-				cout << "  ";
+			{
+				if (stage[i][j - 1] == '1')
+					cout << "  ";
+				else
+					cout << "бр";
+			}
 		}
 		cout << endl;
+	}
+	for (int i = 0; i < 7; ++i)
+	{
+		Core::GetInstance()->SetConsolePos(17, i);
+		cout << "бс";
+	}
+	for (int i = 0; i < 6; ++i)
+	{
+		Core::GetInstance()->SetConsolePos(11 + i, 6);
+		cout << "бс";
+	}
+}
+
+void Stage::AddBlock(Shape* s, const POSITION& pos)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			if (s->GetBlock(j, i) == '0')
+			{
+				stage[pos.y - (3 - i)][pos.x + j] = '0';
+			}
+		}
 	}
 }

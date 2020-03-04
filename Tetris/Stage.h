@@ -11,6 +11,7 @@ public:
     ~Stage();
     bool Init();
     void Render();
+    void AddBlock(class Shape* s, const POSITION& pos);
     int GetSpeed() const { return speed; };
     void SetSpeed(int v) { speed = v; };
 

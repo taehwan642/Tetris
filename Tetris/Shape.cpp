@@ -41,18 +41,36 @@ void Shape::Render()
 
 			if (shape[i][j] == '0')
 				cout << "□";
-			else
-				cout << "  ";
 		}
 	}
 }
+void Shape::RenderNextShape()
+{
+		for (int i = 0; i < 4; ++i)
+		{
+			int yIndex = pos.y - (3 - i);
+			if (yIndex < 0)
+				continue;
+			Core::GetInstance()->SetConsolePos(pos.x, yIndex);
+			for (int j = 0; j < 4; ++j)
+			{
+				if (shape[i][j] == '0')
+					cout << "□";
+				else
+					cout << "  ";
+			}
+		}
+}
 // 클리핑 해줘야하는데 피봇이 문제, 가로의 양에 따라 해야함
-void Shape::MoveDown()
+
+// if 바닥에 닿음 == treu 아니면 false
+bool Shape::MoveDown()
 {
 	if (pos.y == STAGE_HEIGHT - 1)
-		return;
+		return true;
 
 	++pos.y;
+	return false;
 }
 
 void Shape::MoveLeft()

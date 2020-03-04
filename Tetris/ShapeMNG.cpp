@@ -7,16 +7,12 @@ ShapeMNG* ShapeMNG::instance = nullptr;
 ShapeMNG::ShapeMNG() : currentshape(nullptr), nextshape(nullptr)
 {
 	currentshape = SetRandomShape();
+	nextshape = SetRandomShape();
 	shapespeed = 0;
 }
 
 ShapeMNG::~ShapeMNG()
 {
-	list<Shape*>::iterator end = shapes.end();
-	for (list<Shape*>::iterator iter = shapes.begin(); iter != end; iter++)
-	{
-		SAFE_DELETE(*iter);
-	}
 	SAFE_DELETE(currentshape);
 	SAFE_DELETE(nextshape);
 	// 언젠간 이거로도 시험해보기
@@ -33,7 +29,16 @@ void ShapeMNG::Update()
 	++shapespeed;
 	if (stage->GetSpeed() == shapespeed)
 	{
-		currentshape->MoveDown();
+
+		if (currentshape->MoveDown())
+		{
+			stage->AddBlock(currentshape, currentshape->GetPosition());
+			SAFE_DELETE(currentshape);
+
+			currentshape = nextshape;
+			currentshape->SetPosition(4, 0);
+			nextshape = SetRandomShape();
+		}
 		shapespeed = 0;
 	}
 	if (GetAsyncKeyState('A'))
@@ -48,12 +53,9 @@ void ShapeMNG::Update()
 
 void ShapeMNG::Render()
 {
-	list<Shape*>::iterator end = shapes.end();
-	for (list<Shape*>::iterator iter = shapes.begin(); iter != end; iter++)
-	{
-		(*iter)->Render();
-	}
 	currentshape->Render();
+	nextshape->SetPosition(12, 4);
+	nextshape->RenderNextShape();
 }
 
 Shape* ShapeMNG::CreateShape(SHAPE_TYPE type)
