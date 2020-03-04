@@ -70,3 +70,14 @@ void Stage::AddBlock(Shape* s, const POSITION& pos)
 		}
 	}
 }
+
+bool Stage::CheckBlock(int x, int y)
+{
+	// ¹Ù´Ú¿¡ ´ê¾Æµµ ¸®ÅÏÆ®·ç
+	if (y >= STAGE_HEIGHT)
+		return true;
+	if (x < 0 || x >= STAGE_WIDTH)
+		return true;
+
+	return stage[y][x] == '0';
+}

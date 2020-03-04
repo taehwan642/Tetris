@@ -1,5 +1,7 @@
 #include "Shape.h"
 #include "Core.h"
+#include "Stage.h"
+#include "StageMNG.h"
 Shape::Shape()
 {
 	widthCount = 0;
@@ -66,9 +68,20 @@ void Shape::RenderNextShape()
 // if ¹Ù´Ú¿¡ ´êÀ½ == treu ¾Æ´Ï¸é false
 bool Shape::MoveDown()
 {
-	if (pos.y == STAGE_HEIGHT - 1)
-		return true;
-
+	Stage* stage = StageMNG::GetInstance()->GetCurrentStage(); 
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			if (shape[i][j] == '0')
+			{
+				if (stage->CheckBlock(pos.x + j, pos.y - (2 - i)))
+				{
+					return true;
+				}
+			}
+		}
+	}
 	++pos.y;
 	return false;
 }
@@ -77,6 +90,22 @@ void Shape::MoveLeft()
 {
 	if (pos.x == 0)
 		return;
+
+	Stage* stage = StageMNG::GetInstance()->GetCurrentStage();
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			if (shape[i][j] == '0')
+			{
+				if (stage->CheckBlock(pos.x + j - 1, pos.y - (3 - i)))
+				{
+					return;
+				}
+			}
+		}
+	}
+
 	--pos.x;
 }
 
@@ -84,5 +113,20 @@ void Shape::MoveRight()
 {
 	if (pos.x + widthCount == STAGE_WIDTH)
 		return;
+
+	Stage* stage = StageMNG::GetInstance()->GetCurrentStage();
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			if (shape[i][j] == '0')
+			{
+				if (stage->CheckBlock(pos.x + j + 1, pos.y - (3 - i)))
+				{
+					return;
+				}
+			}
+		}
+	}
 	++pos.x;
 }
