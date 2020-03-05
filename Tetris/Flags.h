@@ -2,6 +2,21 @@
 
 enum SHAPE_TYPE
 {
-	SHAPE_RECT,
+	SHAPE_O,
+	SHAPE_I,
+	SHAPE_J,
+	SHAPE_L,
+	SHAPE_S,
+	SHAPE_Z,
+	SHAPE_T,
 	SHAPE_END
+};
+
+enum SHAPE_ROTATION_DIR
+{
+	R_UP,
+	R_RIGHT,
+	R_DOWN,
+	R_LEFT,
+	R_END
 };

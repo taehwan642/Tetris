@@ -1,5 +1,11 @@
 #include "ShapeMNG.h"
-#include "Rectangle.h"
+#include "Opoly.h"
+#include "Ipoly.h"
+#include "Jpoly.h"
+#include "Lpoly.h"
+#include "Spoly.h"
+#include "Zpoly.h"
+#include "Tpoly.h"
 #include "StageMNG.h"
 #include "Stage.h"
 ShapeMNG* ShapeMNG::instance = nullptr;
@@ -35,11 +41,13 @@ void ShapeMNG::Update()
 		}
 		shapespeed = 0;
 	}
-	if (GetAsyncKeyState('A'))
+	if (GetAsyncKeyState('W') & 0x8000)
+		currentshape->Rotate();
+	if (GetAsyncKeyState('A') & 0x8000)
 		currentshape->MoveLeft();
-	if (GetAsyncKeyState('D'))
+	if (GetAsyncKeyState('D') & 0x8000)
 		currentshape->MoveRight();
-	if (GetAsyncKeyState('S'))
+	if (GetAsyncKeyState('S') & 0x8000)
 		currentshape->MoveDown();
 
 
@@ -58,8 +66,26 @@ Shape* ShapeMNG::CreateShape(SHAPE_TYPE type)
 
 	switch (type)
 	{
-	case SHAPE_RECT:
-		shape = new class Rectangle();
+	case SHAPE_O:
+		shape = new  Opoly();
+		break;
+	case SHAPE_I:
+		shape = new Ipoly();
+		break;
+	case SHAPE_J:
+		shape = new Jpoly();
+		break;
+	case SHAPE_L:
+		shape = new Lpoly();
+		break;
+	case SHAPE_S:
+		shape = new Spoly();
+		break;
+	case SHAPE_Z:
+		shape = new Zpoly();
+		break;
+	case SHAPE_T:
+		shape = new Tpoly();
 		break;
 	}
 	if (!shape->Init())

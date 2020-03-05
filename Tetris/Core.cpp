@@ -20,18 +20,18 @@ bool Core::Init()
 
 void Core::Run()
 {	
-	while (true)
+	while (loop)
 	{
 		system("cls");
 		ShapeMNG::GetInstance()->Update();
 		StageMNG::GetInstance()->Run();
 		ShapeMNG::GetInstance()->Render();
-		Sleep(100);
+		Sleep(20);
 	}
 	// 가로 2입니다 이게 하나당 2바이트죠?(■) 2칸짜리란 얘깁니다. 영문기준으로 나와요? 2칸을갔는데 그러면 우리는 1칸간거나 마찬가지지.
 }
 
-Core::Core()
+Core::Core() : loop(true)
 {
 	srand(time(0));
 }

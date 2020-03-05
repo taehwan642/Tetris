@@ -19,7 +19,10 @@
     <Filter Include="Stage">
       <UniqueIdentifier>{1c594669-e1b1-456c-ab4b-2ae9393617b0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tetromino">
+    <Filter Include="Shape">
+      <UniqueIdentifier>{a1f8ba97-1380-4427-b9d2-7620e145c355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Tetromino">
       <UniqueIdentifier>{12d7fa13-5270-4b6a-873c-2fe05601a6eb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -36,14 +39,32 @@
     <ClCompile Include="Stage.cpp">
       <Filter>Stage</Filter>
     </ClCompile>
-    <ClCompile Include="Shape.cpp">
-      <Filter>Tetromino</Filter>
+    <ClCompile Include="Tpoly.cpp">
+      <Filter>Shape\Tetromino</Filter>
     </ClCompile>
-    <ClCompile Include="Rectangle.cpp">
-      <Filter>Tetromino</Filter>
+    <ClCompile Include="Zpoly.cpp">
+      <Filter>Shape\Tetromino</Filter>
+    </ClCompile>
+    <ClCompile Include="Ipoly.cpp">
+      <Filter>Shape\Tetromino</Filter>
+    </ClCompile>
+    <ClCompile Include="Opoly.cpp">
+      <Filter>Shape\Tetromino</Filter>
+    </ClCompile>
+    <ClCompile Include="Spoly.cpp">
+      <Filter>Shape\Tetromino</Filter>
+    </ClCompile>
+    <ClCompile Include="Lpoly.cpp">
+      <Filter>Shape\Tetromino</Filter>
+    </ClCompile>
+    <ClCompile Include="Jpoly.cpp">
+      <Filter>Shape\Tetromino</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Shape</Filter>
     </ClCompile>
     <ClCompile Include="ShapeMNG.cpp">
-      <Filter>Tetromino</Filter>
+      <Filter>Shape</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,17 +83,35 @@
     <ClInclude Include="Stage.h">
       <Filter>Stage</Filter>
     </ClInclude>
-    <ClInclude Include="Shape.h">
-      <Filter>Tetromino</Filter>
-    </ClInclude>
-    <ClInclude Include="Rectangle.h">
-      <Filter>Tetromino</Filter>
-    </ClInclude>
-    <ClInclude Include="ShapeMNG.h">
-      <Filter>Tetromino</Filter>
-    </ClInclude>
     <ClInclude Include="Flags.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Tpoly.h">
+      <Filter>Shape\Tetromino</Filter>
+    </ClInclude>
+    <ClInclude Include="Ipoly.h">
+      <Filter>Shape\Tetromino</Filter>
+    </ClInclude>
+    <ClInclude Include="Zpoly.h">
+      <Filter>Shape\Tetromino</Filter>
+    </ClInclude>
+    <ClInclude Include="Opoly.h">
+      <Filter>Shape\Tetromino</Filter>
+    </ClInclude>
+    <ClInclude Include="Jpoly.h">
+      <Filter>Shape\Tetromino</Filter>
+    </ClInclude>
+    <ClInclude Include="Lpoly.h">
+      <Filter>Shape\Tetromino</Filter>
+    </ClInclude>
+    <ClInclude Include="Spoly.h">
+      <Filter>Shape\Tetromino</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeMNG.h">
+      <Filter>Shape</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

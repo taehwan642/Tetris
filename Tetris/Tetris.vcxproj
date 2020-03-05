@@ -139,23 +139,35 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Core.cpp" />
+    <ClCompile Include="Ipoly.cpp" />
+    <ClCompile Include="Jpoly.cpp" />
+    <ClCompile Include="Lpoly.cpp" />
     <ClCompile Include="MAIN.cpp" />
-    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="Opoly.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="ShapeMNG.cpp" />
+    <ClCompile Include="Spoly.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StageMNG.cpp" />
+    <ClCompile Include="Tpoly.cpp" />
+    <ClCompile Include="Zpoly.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h" />
     <ClInclude Include="Flags.h" />
+    <ClInclude Include="Ipoly.h" />
+    <ClInclude Include="Jpoly.h" />
+    <ClInclude Include="Lpoly.h" />
     <ClInclude Include="Macro.h" />
-    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Opoly.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="ShapeMNG.h" />
+    <ClInclude Include="Spoly.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StageMNG.h" />
+    <ClInclude Include="Tpoly.h" />
     <ClInclude Include="value.h" />
+    <ClInclude Include="Zpoly.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,14 +1,14 @@
-#include "Rectangle.h"
+#include "Opoly.h"
 
-Rectangle::Rectangle()
+Opoly::Opoly()
 {
 }
 
-Rectangle::~Rectangle()
+Opoly::~Opoly()
 {
 }
 
-bool Rectangle::Init()
+bool Opoly::Init()
 {
 	if (!Shape::Init())
 		return false;

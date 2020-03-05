@@ -5,11 +5,10 @@ class Core // 전체적인 게임을 담당하는 코어.
 private:
 	static Core* instance;
 	HANDLE handle;
+	bool loop;
 public:
 	bool Init();
 	void Run();
-
-public:
 	Core();
 	~Core();
 	static Core* GetInstance()
@@ -23,5 +22,6 @@ public:
 		SAFE_DELETE(instance);
 	}
 	void SetConsolePos(int x, int y);
+	void End() { loop = false; };
 };
 

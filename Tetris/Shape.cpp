@@ -4,6 +4,7 @@
 #include "StageMNG.h"
 Shape::Shape()
 {
+	rotationdir = R_UP;
 	widthCount = 0;
 	for (int i = 0; i < 4; ++i)
 	{
@@ -35,14 +36,17 @@ void Shape::Render()
 		int yIndex = pos.y - (3 - i);
 		if (yIndex < 0)
 			continue;
-		Core::GetInstance()->SetConsolePos(pos.x, yIndex);
 		for (int j = 0; j < 4; ++j)
 		{
 			if (pos.x + j >= STAGE_WIDTH)
 				continue;
 
 			if (shape[i][j] == '0')
+			{
+				Core::GetInstance()->SetConsolePos(pos.x + j, yIndex);
 				cout << "□";
+			}
+			// 공백출력 안하면 네모가 나오긴 하는데, 존내 이상하게 끌어당겨서 나옴. 공백출력이 필요함. 하지만 pos.x + j를 했기 때문에 공백출력안해도됨
 		}
 	}
 }
@@ -53,13 +57,14 @@ void Shape::RenderNextShape()
 			int yIndex = pos.y - (3 - i);
 			if (yIndex < 0)
 				continue;
-			Core::GetInstance()->SetConsolePos(pos.x, yIndex);
 			for (int j = 0; j < 4; ++j)
 			{
 				if (shape[i][j] == '0')
+				{
+					Core::GetInstance()->SetConsolePos(pos.x + j, yIndex);
 					cout << "□";
-				else
-					cout << "  ";
+				}
+				
 			}
 		}
 }
@@ -77,6 +82,20 @@ bool Shape::MoveDown()
 			{
 				if (stage->CheckBlock(pos.x + j, pos.y - (2 - i)))
 				{
+					for (int k = 0; k < 4; k++)
+					{
+						for (int l = 0; l < 4; l++)
+						{
+							if (shape[k][l] == '0')
+							{
+								if (pos.y - (3 - k) < 0)
+								{
+									Core::GetInstance()->End();
+									break;
+								}
+							}
+						}
+					}
 					return true;
 				}
 			}

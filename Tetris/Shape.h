@@ -7,10 +7,12 @@ protected:
 	POSITION pos;
 	POSITION pivot;
 	int widthCount;
+	int rotationdir;
 public:
 	Shape();
 	virtual ~Shape();
 	virtual bool Init();
+	virtual void Rotate() = 0;
 	void Render();
 	void RenderNextShape();
 	bool MoveDown();
